@@ -1,2 +1,2 @@
-# Desenvolvimento_de_Software_UP
+# Desenvolvimento_de_Software
 códigos desenvolvidos nas aulas de Desenvolvimento de Software 
