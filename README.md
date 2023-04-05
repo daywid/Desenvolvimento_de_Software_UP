@@ -1,2 +1,2 @@
 # Desenvolvimento_de_Software
-códigos desenvolvidos nas aulas de Desenvolvimento de Software da Universidade Positivo.
+códigos desenvolvidos durante as aulas de Desenvolvimento de Software da Universidade Positivo.
