@@ -17,7 +17,7 @@ que abre o arquivo clientes.csv e retorna uma lista de objetos
 com os dados gravados.
 
 1.4 Sempre que um dos métodos de busca (find_one e find_all) não encontrarem, 
-deve gerar um exceção.
+deve gerar um exceção (pesquise pelo comando throw ou throws  do java).
 */
 
 import java.io.BufferedReader;
@@ -50,31 +50,41 @@ public class Cliente {
 		}
 		
 	public void find_one(String cpf) throws IOException {
-		FileReader arquivo = new FileReader("clientes.csv");
-		BufferedReader leitor = new BufferedReader(arquivo);
-		
-		String linha = leitor.readLine();
-		while (linha != null) {
-			String[] dados = linha.split(",");
-			if (dados[0].equals(cpf)) {
-				this.cpf = dados[0];
-				this.nome = dados[1];
-				this.email = dados[2];
-				this.telefone = dados[3];
-				leitor.close();
-				arquivo.close();
-				return;
-			}
-		linha = leitor.readLine();
+	    FileReader arquivo = null;
+	    BufferedReader leitor = null;
+	    
+	    try {
+	        arquivo = new FileReader("clientes.csv");
+	        leitor = new BufferedReader(arquivo);
+	        
+	        String linha = leitor.readLine();
+	        while (linha != null) {
+	            String[] dados = linha.split(",");
+	            if (dados[0].equals(cpf)) {
+	                this.cpf = dados[0];
+	                this.nome = dados[1];
+	                this.email = dados[2];
+	                this.telefone = dados[3];
+	                return;
+	            }
+
+	            linha = leitor.readLine();
+	        }
+	        
+	        throw new IllegalArgumentException("Cliente não encontrado");
+	        
+	    } finally {
+	        if (leitor != null) {
+	            leitor.close();
+	        }
+	        
+	        if (arquivo != null) {
+	            arquivo.close();
+	        }
+	    }
 	}
-	leitor.close();
-	arquivo.close();
-	throw new IllegalArgumentException("Cliente não encontrado");
-	
-	}
-	
 	public List<Cliente> find_all() throws IOException{
-		FileReader arquivo = new FileReader("Cliente.csv");
+		FileReader arquivo = new FileReader("clientes.csv");
 		BufferedReader leitor = new BufferedReader(arquivo);
 		
 		List<Cliente> clientes = new ArrayList<Cliente>();
@@ -88,10 +98,13 @@ public class Cliente {
 			cliente.telefone = dados[3];
 			clientes.add(cliente);
 			linha = leitor.readLine();
+			
+			return clientes;
 		}
 		leitor.close();
 		arquivo.close();
-		return clientes;
+		
+		throw new IllegalArgumentException("Cliente não encontrado");
 	}
 	
 	
