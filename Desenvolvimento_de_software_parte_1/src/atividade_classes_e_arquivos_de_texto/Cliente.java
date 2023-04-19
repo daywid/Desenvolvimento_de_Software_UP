@@ -14,7 +14,6 @@ com os dados gravados.
 deve gerar um exceção (pesquise pelo comando throw ou throws  do java).
 */
 
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -24,10 +23,10 @@ import java.util.List;
 
 public class Cliente {
 
-    private String cpf;
-    private String nome;
-    private String email;
-    private String telefone;
+    public String cpf;
+    public String nome;
+    public String email;
+    public String telefone;
 
     public Cliente(String cpf, String nome, String email, String telefone) {
         this.cpf = cpf;
