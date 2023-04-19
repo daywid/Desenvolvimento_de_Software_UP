@@ -14,6 +14,7 @@ com os dados gravados.
 deve gerar um exceção (pesquise pelo comando throw ou throws  do java).
 */
 
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -36,39 +37,39 @@ public class Cliente {
     }
 
     public void salvar() throws IOException {
-        FileWriter writer = new FileWriter("clientes.csv", true);
-        writer.write("cpf,nome,email,telefone\n");
-        writer.write(this.cpf + "," + this.nome + "," + this.email + "," + this.telefone + "\n");
-        writer.close();
+        FileWriter arquivo = new FileWriter("clientes.csv", true);
+        arquivo.write("cpf,nome,email,telefone\n");
+        arquivo.write(this.cpf + "," + this.nome + "," + this.email + "," + this.telefone + "\n");
+        arquivo.close();
     }
 
     public void find_one(String cpf) throws IOException, ClienteNotFoundException {
-        BufferedReader reader = new BufferedReader(new FileReader("clientes.csv"));
+        BufferedReader leitor = new BufferedReader(new FileReader("clientes.csv"));
         String linha = null;
-        boolean found = false;
-        while ((linha = reader.readLine()) != null) {
+        boolean encontrar = false;
+        while ((linha = leitor.readLine()) != null) {
             String[] data = linha.split(",");
             if (data[0].equals(cpf)) {
                 this.cpf = data[0];
                 this.nome = data[1];
                 this.email = data[2];
                 this.telefone = data[3];
-                found = true;
+                encontrar = true;
                 break;
             }
         }
-        reader.close();
-        if (!found) {
+        leitor.close();
+        if (!encontrar) {
             throw new ClienteNotFoundException("Cliente não encontrado");
         }
     }
 
     public List<Cliente> find_all() throws IOException {
         List<Cliente> clientes = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader("clientes.csv"));
+        BufferedReader leitor = new BufferedReader(new FileReader("clientes.csv"));
         String linha = null;
         boolean header = true;
-        while ((linha = reader.readLine()) != null) {
+        while ((linha = leitor.readLine()) != null) {
             if (header) {
                 header = false;
                 continue;
@@ -77,7 +78,7 @@ public class Cliente {
             Cliente cliente = new Cliente(data[0], data[1], data[2], data[3]);
             clientes.add(cliente);
         }
-        reader.close();
+        leitor.close();
         return clientes;
     }
     
