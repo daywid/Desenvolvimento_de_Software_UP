@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Banco {
 
-	public int id;
+	   public int id;
     public String nome;
     public ArrayList<Cliente> clientes;
 	
@@ -21,7 +21,6 @@ public class Banco {
     public void listarClientes() {
         for (Cliente cliente : clientes) {
             System.out.println(cliente.nome());
-        }
-	
+        }
 }
-    }
+    }
