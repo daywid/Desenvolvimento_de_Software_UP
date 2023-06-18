@@ -13,3 +13,28 @@ aluno.cursos.add(ODONTO);
 
 sysout(aluno.getValorTotal()); //Imprimir a soma das parcelas de cada curso adicionado em aluno.cursos 
 */
+
+package polimorfismo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class estudante {
+    private List<intercurso> cursos;
+
+    public estudante() {
+        this.cursos = new ArrayList<>();
+    }
+
+    public void adicionarCurso(intercurso curso) {
+        cursos.add(curso);
+    }
+
+    public void listarValorParcelas() {
+        double totalParcelas = 0;
+        for (intercurso curso : cursos) {
+            totalParcelas += curso.GetCusto_do_Curso();
+        }
+        System.out.println("Valor total das parcelas: " + totalParcelas);
+    }
+}
