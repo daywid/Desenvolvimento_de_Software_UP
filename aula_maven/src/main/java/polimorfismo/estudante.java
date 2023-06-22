@@ -20,10 +20,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class estudante {
-    private List<intercurso> cursos;
 
-    public estudante() {
-        this.cursos = new ArrayList<>();
+    public String nome;
+    public String cpf;
+    public String email;
+    public List<intercurso> cursos;
+
+
+     public estudante() {
+        cursos = new ArrayList<>();
     }
 
     public void adicionarCurso(intercurso curso) {

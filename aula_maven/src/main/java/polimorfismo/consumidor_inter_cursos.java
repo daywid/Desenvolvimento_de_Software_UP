@@ -26,17 +26,24 @@ public class consumidor_inter_cursos {
 		VETERINARIA.valor_parcela = 2500;
 		VETERINARIA.custo_lab = 800;
 		
-		
-		//Adicionar um curso na lista de cursos
-		cursos.add(BSI);
-		cursos.add(ODONTO);
-		cursos.add(VETERINARIA);
-		
-		System.out.println(cursos.size());
-		for(int i=0;i<cursos.size();i++) {
-			System.out.println(cursos.get(i).gGetNome_do_Curso());
-		}
-		
+		// Criar estudante
+        estudante aluno = new estudante();
+        aluno.nome = "João";
+        aluno.cpf = "123456789";
+        aluno.email = "joao@example.com";
+
+        // Adicionar cursos ao estudante
+        aluno.adicionarCurso(BSI);
+        aluno.adicionarCurso(ODONTO);
+        aluno.adicionarCurso(VETERINARIA);
+
+        // Listar o nome dos cursos adicionados
+        for (intercurso curso : aluno.cursos) {
+            System.out.println(curso.gGetNome_do_Curso());
+        }
+
+
+		aluno.listarValorParcelas();
 	}
 
 }
