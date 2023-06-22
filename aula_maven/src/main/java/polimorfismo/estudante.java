@@ -26,7 +26,6 @@ public class estudante {
     public String email;
     public List<intercurso> cursos;
 
-
      public estudante() {
         cursos = new ArrayList<>();
     }
