@@ -3,12 +3,7 @@ package atividade_implementação_aluno_e_professor;
 public class Consumidor_turma {
 
 	public static void main(String[] args) {
-//		Professor p = new Professor();
-//		p.nome = "Pedro de Lara";
-//		p.cpf = "999";
-//		p.matricula = 1;
-//		p.email = "pedrolara@gmail.com";
-		
+
 		Aluno a;
 		a = new Aluno();
 		a.nome = "Maria da Silva";
@@ -35,10 +30,12 @@ public class Consumidor_turma {
 		a.email = "ana123@gmail.com";
 		t.alunos.add(a);
 
-		System.out.println("Codigo da turma:" +t.codigo);
+		System.out.println("Codigo da turma: " +t.codigo);
 //		System.out.println("Professor: " + t.professor.nome);
-		System.out.println("Alunos:");
-		System.out.println(t.listar_alunos());
+		System.out.println("Alunos e cpf: ");
+		 for (String aluno : t.listarAlunos()) {
+            System.out.println(aluno);
+        }
 		
 	}
 

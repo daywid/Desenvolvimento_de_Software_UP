@@ -7,15 +7,14 @@ public class Professor {
 	public String nome = "";
 	public String email = "";
 
-	//construtor padrão:
-	Professor(){}
+	// //construtor padrão:
+	// Professor(){}
 	
-	
-	//construtor com argumentos
-	public Professor(String cpf, int matricula, String nome, String email) {
-		this.cpf = cpf;
-		this.matricula = matricula;
-		this.nome = nome;
-		this.email = email;
-	}
+	// //construtor com argumentos
+	// public Professor(String cpf, int matricula, String nome, String email) {
+	// 	this.cpf = cpf;
+	// 	this.matricula = matricula;
+	// 	this.nome = nome;
+	// 	this.email = email;
+	// }
 }
