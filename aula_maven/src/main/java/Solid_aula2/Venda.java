@@ -7,9 +7,7 @@ public class Venda {
 		
 		boolean resultado = false;
 	
-		if(cartao.ValidarData()
-				&&cartao.ValidarNome()
-				&&cartao.ValidarNumero()) {
+		if(cartao.validar()) {
 			resultado = true;
 		}else {
 			resultado = false;

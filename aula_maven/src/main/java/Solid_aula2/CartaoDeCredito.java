@@ -16,7 +16,7 @@ public class CartaoDeCredito {
 	public CartaoDeCredito() {
 	}
 	
-	public boolean ValidarNome() {
+	private boolean ValidarNome() {
 		boolean resultado = false;
 		//invocar o endpoint da API da operadora de cartao de credito.
 		if(this.nome.equalsIgnoreCase("Pedro de Lara")) {
@@ -28,7 +28,7 @@ public class CartaoDeCredito {
 		return resultado;
 	}
 	
-	public boolean ValidarNumero() {
+	private boolean ValidarNumero() {
 		boolean resultado = false;
 		//invocar o endpoint da API da operadora de cartao de credito.
 		if(this.numero.equalsIgnoreCase("1234")) {
@@ -40,7 +40,7 @@ public class CartaoDeCredito {
 		return resultado;
 	}
 	
-	public boolean ValidarData() {
+	private boolean ValidarData() {
 		boolean resultado = false;
 		//invocar o endpoint da API da operadora de cartao de credito.
 		if(this.data_validade.equalsIgnoreCase("08/2030")) {
@@ -52,7 +52,15 @@ public class CartaoDeCredito {
 		return resultado;
 	}
 	
-	
+	public boolean validar() {
+		if(this.ValidarData()
+				&&this.ValidarNumero()
+				&&this.ValidarNome()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 	
 	
