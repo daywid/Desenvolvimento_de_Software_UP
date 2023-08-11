@@ -2,6 +2,7 @@ package Solid_aula2;
 
 public class Venda {
 	public double valor_a_cobrar; //atributo provisorio
+	
 	public boolean ProcessarPagamento(CartaoDeCredito cartao) {
 		
 		boolean resultado = false;
@@ -15,11 +16,6 @@ public class Venda {
 		}
 		return resultado;
 	}
-	
-	
-	
-	
-	
 	
 	
 }
