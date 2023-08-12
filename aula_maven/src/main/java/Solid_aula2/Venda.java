@@ -3,11 +3,11 @@ package Solid_aula2;
 public class Venda {
 	public double valor_a_cobrar; //atributo provisorio
 	
-	public boolean ProcessarPagamento(CartaoDeCredito cartao) {
+	public boolean ProcessarPagamento(Servico_financeiro f) {
 		
 		boolean resultado = false;
 	
-		if(cartao.validar()) {
+		if(f.Pagar()) {
 			resultado = true;
 		}else {
 			resultado = false;
