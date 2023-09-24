@@ -1,3 +1,7 @@
+create database estacionamento;
+
+use estacionamento;
+
 -- Cria a tabela "veiculos" no banco de dados "veiculos"
 CREATE TABLE veiculos (
     id INT AUTO_INCREMENT PRIMARY KEY,
