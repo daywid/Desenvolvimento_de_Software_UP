@@ -13,10 +13,12 @@ public class BancoDeDadosArmazenamento implements Armazenamento {
 
     public BancoDeDadosArmazenamento() {
         try {
+
+        
             // Configurações para a conexão com o banco de dados MySQL
-            String url = "jdbc:mysql://localhost:3306/seu_banco_de_dados";
-            String usuario = "seu_usuario";
-            String senha = "sua_senha";
+            String url = "jdbc:mysql://localhost:3306/estacionamento";
+            String usuario = "root";
+            String senha = "root";
             
             // Estabelece a conexão com o banco de dados
             connection = DriverManager.getConnection(url, usuario, senha);
