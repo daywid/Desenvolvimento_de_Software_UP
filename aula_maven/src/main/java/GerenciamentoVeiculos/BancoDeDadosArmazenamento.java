@@ -42,7 +42,7 @@ public class BancoDeDadosArmazenamento implements Armazenamento {
     }
 
     @Override
-    public List<Veiculo> recuperarVeiculos() {
+    public List<Veiculo> recuperarVeiculosEmEstoque() {
         List<Veiculo> veiculos = new ArrayList<>();
         String sql = "SELECT * FROM veiculos";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -61,5 +61,4 @@ public class BancoDeDadosArmazenamento implements Armazenamento {
         return veiculos;
     }
     
-    // Outros métodos de gerenciamento do banco de dados, como atualizar e excluir veículos, podem ser adicionados aqui.
 }

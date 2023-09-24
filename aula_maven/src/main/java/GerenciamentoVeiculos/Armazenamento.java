@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface Armazenamento {
     void adicionarVeiculo(Veiculo veiculo);
-    void recuperarVeiculosEmEstoque();
+    List<Veiculo> recuperarVeiculosEmEstoque();
 }
