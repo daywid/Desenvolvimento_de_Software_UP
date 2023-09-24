@@ -16,5 +16,5 @@ public class Carro extends Veiculo {
         this.numeroPortas = numeroPortas;
     }
 
-    // Getters e Setters
+    
 }
