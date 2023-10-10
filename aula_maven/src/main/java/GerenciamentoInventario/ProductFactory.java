@@ -1,5 +1,5 @@
 package GerenciamentoInventario;
 
 public interface ProductFactory {
-    Product createProduct();
+    Product createProduct(String type);
 }
